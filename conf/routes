@@ -10,3 +10,6 @@ GET     /                           controllers.HomeController.index
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 GET     /tshirts                     controllers.TshirtController.index()
+
+# Render GraphQl Schema
+GET     /render-schema              controllers.TshirtController.renderSchema()

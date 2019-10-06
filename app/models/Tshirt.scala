@@ -1,5 +1,8 @@
 package models
 
+import play.api.libs.json.Json
+
+
 class Tshirt(var id: Int = 0, var color: String = "", var pic_url: String = "", var price: Int = 0) {
 
   var tShirts: Set[Tshirt] = Set()
@@ -12,7 +15,9 @@ class Tshirt(var id: Int = 0, var color: String = "", var pic_url: String = "", 
     return tShirts
   }
 
-
+  def getAll(): List[Tshirt] ={
+    return Tshirt.getAllTshirts().toList
+  }
 }
 
 // singleton object

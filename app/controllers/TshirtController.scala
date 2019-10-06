@@ -1,9 +1,10 @@
 package controllers
 
 import javax.inject._
-import models.Tshirt
+import models.{SchemaDefinition, Tshirt}
 import play.api.libs.json.{JsObject, Json}
 import play.api.mvc._
+import sangria.renderer.SchemaRenderer
 
 import scala.collection.mutable.ListBuffer
 
@@ -23,5 +24,9 @@ class TshirtController  @Inject()(cc: ControllerComponents) extends AbstractCont
       tshirtList += js
     }
     Ok(Json.toJson(tshirtList.toList))
+  }
+
+  def renderSchema = Action {
+    Ok(SchemaRenderer.renderSchema(SchemaDefinition.TshirtSchema))
   }
 }
