@@ -1,6 +1,6 @@
 package models
 
-class Tshirt(var id: Int, var color: String, var pic_url: String, var price: Int) {
+class Tshirt(var id: Int = 0, var color: String = "", var pic_url: String = "", var price: Int = 0) {
 
   var tShirts: Set[Tshirt] = Set()
 
