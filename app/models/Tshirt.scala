@@ -1,7 +1,6 @@
 package models
 
-import play.api.libs.json.Json
-
+import play.api.libs.json.{ Json}
 
 class Tshirt(var id: Int = 0, var color: String = "", var pic_url: String = "", var price: Int = 0) {
 
@@ -17,6 +16,12 @@ class Tshirt(var id: Int = 0, var color: String = "", var pic_url: String = "", 
 
   def getAll(): List[Tshirt] ={
     return Tshirt.getAllTshirts().toList
+  }
+  // Overriding tostring method
+  override def toString() : String = {
+
+    "{id: " + Json.toJson(id) + ", " +
+      "color: " + Json.toJson(color)+", "+"pic_url: "+Json.toJson(pic_url)+ ", "+"price: "+Json.toJson(price)+"}";
   }
 }
 

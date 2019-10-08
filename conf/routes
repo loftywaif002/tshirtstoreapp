@@ -13,3 +13,6 @@ GET     /tshirts                     controllers.TshirtController.index()
 
 # Render GraphQl Schema
 GET     /render-schema              controllers.TshirtController.renderSchema()
+
+# Get all Tshirts, GraphQl Endpoint
+POST    /graphql                    controllers.TshirtController.graphql

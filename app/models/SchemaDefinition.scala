@@ -1,6 +1,5 @@
 package models
 
-import sangria.schema.ObjectType
 import sangria.schema.{Field, _}
 
 /**
