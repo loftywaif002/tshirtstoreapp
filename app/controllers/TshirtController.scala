@@ -38,8 +38,10 @@ class TshirtController @Inject()(system: ActorSystem, config: Configuration) ext
 
   // GraphQl Query Handler
   def graphql = Action.async(parse.json) { request =>
-    val query = (request.body \ "query").as[String]
 
+    val query = (request.body \ "query").as[String]
+    print("query=====");
+    print(query);
     QueryParser.parse(query) match {
       // query parsed successfully, time to execute it!
       case Success(queryAst) =>

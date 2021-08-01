@@ -10,7 +10,7 @@ object SchemaDefinition {
   val Tshirt= ObjectType(
     "Tshirt",
     fields[Unit, Tshirt](
-      Field("id", IntType, resolve = _.value.id),
+      Field("_id", IntType, resolve = _.value.id),
       Field("color", StringType, resolve = _.value.color),
       Field("pic_url", StringType, resolve = _.value.pic_url),
       Field("price", IntType, resolve = _.value.price)
